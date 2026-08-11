@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Escolha uma caixinha, descubra o almoço de hoje e encare o desafio de passar 30 dias sem repetir o prato.">
+    <meta name="theme-color" content="#e71912">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Desafio 30 Dias — Almoço Surpresa">
+    <meta property="og:description" content="Escolha 1 caixinha grátis e descubra o almoço de hoje.">
+    <meta property="og:image" content="/assets/brand/og-desafio-30-dias.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Desafio 30 Dias — Almoço Surpresa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/pro.css">
+    <script src="js/config.js"></script>
+    <script src="js/tracking.js"></script>
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1559883709101573&amp;ev=PageView&amp;noscript=1" alt=""></noscript>
+    <a class="skip-link" href="#desafio">Pular para o desafio</a>
+
+    <div class="announcement" role="status">
+      <span>DESAFIO INTERATIVO</span>
+      <strong>Escolha 1 almoço grátis</strong>
+    </div>
+
+    <header class="hero" id="inicio">
+      <div class="comic-dots comic-dots--one" aria-hidden="true"></div>
+      <div class="comic-dots comic-dots--two" aria-hidden="true"></div>
+
+      <div class="container hero__layout">
+        <div class="hero__copy">
+          <div class="brand-lockup" aria-label="Desafio 30 Dias">
+            <span class="brand-lockup__small">DESAFIO</span>
+            <span class="brand-lockup__number">30</span>
+            <span class="brand-lockup__days">DIAS</span>
+          </div>
+
+          <p class="eyebrow"><span aria-hidden="true">★</span> ALMOÇO SURPRESA</p>
+          <h1>Você consegue passar <mark>30 dias</mark> sem repetir o almoço?</h1>
+          <p class="hero__lead">Escolha uma caixinha e libere <strong>grátis</strong> uma receita completa para fazer hoje.</p>
+
+          <div class="hero__proof" aria-label="Vantagens da amostra">
+            <span>Sem cadastro</span>
+            <span>1 escolha grátis</span>
+            <span>Resultado na hora</span>
+          </div>
+
+          <a class="button button--ink hero__jump" href="#desafio">Quero escolher minha caixinha <span aria-hidden="true">↓</span></a>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="game-console">
+            <div class="game-console__top">
+              <span><i></i> DESAFIO ATIVO</span>
+              <strong>1 ABERTURA LIVRE</strong>
+            </div>
+            <div class="game-console__screen">
+              <div class="preview-card preview-card--one"><img src="assets/food/featured/dia-04-escondidinho.webp" alt="" width="900" height="900"></div>
+              <div class="preview-card preview-card--two"><img src="assets/food/generated/dia_07_frango_xadrez.png" alt="" width="720" height="720"></div>
+              <div class="preview-card preview-card--three"><img src="assets/food/generated/dia_14_panqueca_frango_espinafre.png" alt="" width="720" height="720"></div>
+              <div class="mystery-card-main"><span>?</span><small>ESCOLHA<br>UMA CAIXA</small></div>
+              <span class="screen-spark screen-spark--one">✦</span>
+              <span class="screen-spark screen-spark--two">✦</span>
+            </div>
+            <div class="game-console__footer">
+              <span>30 dias</span><i></i><span>30 almoços</span><i></i><span>0 repetição</span>
+            </div>
+          </div>
+          <div class="free-token"><strong>1</strong><span>JOGADA<br>GRÁTIS</span></div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="challenge" id="desafio" aria-labelledby="challenge-title">
+        <div class="container">
+          <div class="section-heading section-heading--center">
+            <p class="eyebrow eyebrow--red">🎁 ESCOLHA 1 GRÁTIS</p>
+            <h2 id="challenge-title">Escolha uma caixa e libere sua receita grátis</h2>
+            <p>A primeira escolha libera uma receita completa. Depois, os outros 29 dias continuam bloqueados.</p>
+          </div>
+
+          <div class="box-stage">
+            <div class="box-stage__topline">
+              <span><i class="status-dot" aria-hidden="true"></i> SUA JOGADA ESTÁ LIBERADA</span>
+              <span id="choice-counter">0 de 1 aberta</span>
+            </div>
+            <div class="progress-rail" aria-hidden="true"><span id="progress-fill"></span></div>
+            <div class="mystery-grid" id="mystery-grid" role="group" aria-label="30 caixinhas de almoço"></div>
+            <p class="box-stage__hint" id="box-hint">Escolha pelo instinto e libere a receita-amostra completa.</p>
+          </div>
+
+          <noscript>
+            <p class="noscript">Ative o JavaScript para abrir sua caixinha e descobrir a refeição.</p>
+          </noscript>
+        </div>
+      </section>
+
+      <section class="reveal" id="revelacao" aria-labelledby="reveal-title" hidden>
+        <div class="container">
+          <div class="reveal__shell">
+            <div class="reveal__image-wrap">
+              <div class="reveal__day" id="reveal-day">DIA 01</div>
+              <img id="reveal-image" src="assets/food/featured/dia-04-escondidinho.webp" alt="" width="900" height="900">
+            </div>
+            <div class="reveal__content">
+              <p class="eyebrow eyebrow--yellow">SUA CAIXINHA REVELOU</p>
+              <h2 id="reveal-title">Seu almoço surpresa</h2>
+              <p class="reveal__meal" id="reveal-meal"></p>
+              <div class="meal-stats" aria-label="Informações da refeição">
+                <div><span aria-hidden="true">◷</span><small>PREPARO</small><strong id="reveal-time">20 min</strong></div>
+                <div><span aria-hidden="true">●</span><small>NÍVEL</small><strong id="reveal-level">Fácil</strong></div>
+                <div><span aria-hidden="true">♨</span><small>RENDE</small><strong>2 ou 4</strong></div>
+              </div>
+              <div class="locked-message"><span aria-hidden="true">🔒</span><strong>Você abriu 1.</strong> Ainda restam 29 almoços bloqueados.</div>
+              <button class="button button--yellow button--full" type="button" data-checkout>Desbloquear os 30 almoços <span aria-hidden="true">→</span></button>
+              <a class="text-link" href="#conteudo">Ver tudo o que vou receber</a>
+            </div>
+            <div class="reveal__recipe">
+              <div class="recipe-sample-heading">
+                <span>AMOSTRA COMPLETA LIBERADA</span>
+                <h3>Esta receita é sua. Faça hoje.</h3>
+                <p>Sem cadastro e sem pegadinha: você recebe ingredientes e preparo completos.</p>
+              </div>
+              <div class="recipe-panel">
+                <div class="recipe-panel__title"><span>01</span><h4>Ingredientes</h4></div>
+                <p id="reveal-ingredients"></p>
+              </div>
+              <div class="recipe-panel recipe-panel--steps">
+                <div class="recipe-panel__title"><span>02</span><h4>Modo de preparo</h4></div>
+                <ol id="reveal-steps"></ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="problem" id="problema">
+        <div class="container problem__layout">
+          <div class="problem__copy">
+            <p class="eyebrow eyebrow--yellow">A VERDADE É ESSA</p>
+            <h2>O problema não é cozinhar. <mark>É decidir todo dia.</mark></h2>
+            <p>Quando a fome chega, você abre a geladeira, pensa nas mesmas opções e acaba repetindo o prato de sempre.</p>
+          </div>
+          <div class="pain-list">
+            <article><span>01</span><div><strong>Mesmos pratos</strong><p>A rotina cai sempre no arroz, feijão e na mesma mistura.</p></div></article>
+            <article><span>02</span><div><strong>Compras sem plano</strong><p>Ingredientes soltos acabam esquecidos e perdem a graça.</p></div></article>
+            <article><span>03</span><div><strong>Tempo perdido</strong><p>Você procura ideia justamente quando já está com fome.</p></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="steps" id="como-funciona">
+        <div class="container">
+          <div class="section-heading section-heading--center">
+            <p class="eyebrow eyebrow--red">ZERO COMPLICAÇÃO</p>
+            <h2>Abra o dia. Veja o prato. Faça acontecer.</h2>
+            <p>Um sistema simples para tirar uma decisão da sua cabeça todos os dias.</p>
+          </div>
+          <div class="steps__grid">
+            <article class="step-card">
+              <span class="step-card__number">1</span>
+              <div class="step-card__icon" aria-hidden="true">□</div>
+              <h3>Abra o dia</h3>
+              <p>Escolha a refeição do calendário e saiba exatamente o que preparar.</p>
+            </article>
+            <article class="step-card step-card--yellow">
+              <span class="step-card__number">2</span>
+              <div class="step-card__icon" aria-hidden="true">☷</div>
+              <h3>Veja tudo</h3>
+              <p>Foto, ingredientes, tempo, porções e preparo no mesmo lugar.</p>
+            </article>
+            <article class="step-card step-card--red">
+              <span class="step-card__number">3</span>
+              <div class="step-card__icon" aria-hidden="true">✓</div>
+              <h3>Cozinhe sem repetir</h3>
+              <p>Siga por 30 dias com variedade e uma compra mais organizada.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="inside" id="conteudo">
+        <div class="container inside__layout">
+          <div class="inside__visual">
+            <div class="guide-cover">
+              <img src="assets/product/capa-30-almocos.webp" alt="Capa do guia 30 Dias Sem Repetir o Almoço" width="900" height="1200" loading="lazy">
+            </div>
+            <div class="page-preview page-preview--one">
+              <img src="assets/product/pagina-exemplo.webp" alt="Página ilustrada com três refeições do guia" width="900" height="1200" loading="lazy">
+            </div>
+            <div class="value-sticker">30<br><small>ALMOÇOS</small></div>
+          </div>
+          <div class="inside__copy">
+            <p class="eyebrow eyebrow--red">POR DENTRO DO DESAFIO</p>
+            <h2>Não é só uma lista de receitas. É o seu almoço já decidido.</h2>
+            <p class="inside__lead">Você recebe uma experiência digital completa para consultar pelo celular, tablet ou computador.</p>
+            <ul class="check-list">
+              <li><span>✓</span><div><strong>30 almoços ilustrados</strong><small>Uma opção diferente para cada dia.</small></div></li>
+              <li><span>✓</span><div><strong>5 semanas organizadas</strong><small>Um caminho claro do primeiro ao último dia.</small></div></li>
+              <li><span>✓</span><div><strong>Listas de compras semanais</strong><small>Compre com mais foco e menos improviso.</small></div></li>
+              <li><span>✓</span><div><strong>Preparo, tempo e porções</strong><small>Informações práticas no mesmo painel.</small></div></li>
+              <li><span>✓</span><div><strong>Receitas para 2 ou 4 pessoas</strong><small>Adapte o cardápio à sua rotina.</small></div></li>
+            </ul>
+            <button class="button button--red" type="button" data-checkout>Quero o desafio completo <span aria-hidden="true">→</span></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="menu-wall" id="cardapio">
+        <div class="container">
+          <div class="section-heading section-heading--split">
+            <div>
+              <p class="eyebrow eyebrow--yellow">VOCÊ VIU 1 DE 30</p>
+              <h2>Os outros 29 continuam em segredo</h2>
+            </div>
+            <p>Cada caixa guarda outra refeição completa. Você só descobre foto, ingredientes e preparo quando desbloqueia o desafio.</p>
+          </div>
+          <div class="meal-gallery">
+            <article class="gallery-card gallery-card--large gallery-card--featured is-pending" id="featured-gallery-card"><img id="featured-gallery-image" src="assets/food/featured/dia-04-escondidinho.webp" alt="Refeição que você revelou" width="900" height="900" loading="lazy"><span id="featured-gallery-day">SUA CAIXA</span><strong id="featured-gallery-title">Abra uma caixa acima</strong><em>SUA REFEIÇÃO REVELADA</em></article>
+            <article class="gallery-card gallery-card--teaser"><img src="assets/food/generated/dia_07_frango_xadrez.png" alt="Refeição bloqueada" width="720" height="720" loading="lazy"><div class="teaser-lock"><span>🔒</span><strong>DIA ??</strong><small>receita bloqueada</small></div></article>
+            <article class="gallery-card gallery-card--teaser"><img src="assets/food/generated/dia_14_panqueca_frango_espinafre.png" alt="Refeição bloqueada" width="720" height="720" loading="lazy"><div class="teaser-lock"><span>🔒</span><strong>DIA ??</strong><small>receita bloqueada</small></div></article>
+            <article class="gallery-card gallery-card--teaser"><img src="assets/food/generated/dia_18_feijao_tropeiro.png" alt="Refeição bloqueada" width="720" height="720" loading="lazy"><div class="teaser-lock"><span>🔒</span><strong>DIA ??</strong><small>receita bloqueada</small></div></article>
+            <article class="gallery-card gallery-card--teaser"><img src="assets/food/generated/dia_27_fricasse_milho.png" alt="Refeição bloqueada" width="720" height="720" loading="lazy"><div class="teaser-lock"><span>🔒</span><strong>DIA ??</strong><small>receita bloqueada</small></div></article>
+            <article class="gallery-card gallery-card--locked" aria-label="25 receitas adicionais bloqueadas"><div class="gallery-card__lock">🔒</div><strong>+ 25 almoços</strong><small>além destes 4 segredos</small></article>
+          </div>
+          <div class="curiosity-trigger"><span>1 revelado</span><i></i><strong>29 ainda bloqueados</strong></div>
+          <div class="center-action"><button class="button button--yellow" type="button" data-checkout>Desbloquear os 29 restantes <span aria-hidden="true">→</span></button></div>
+        </div>
+      </section>
+
+      <section class="bonus" id="bonus">
+        <div class="container bonus__layout">
+          <div class="bonus__copy">
+            <p class="eyebrow eyebrow--yellow">BÔNUS ESPECIAL INCLUSO</p>
+            <h2>E quando chegar a noite? <mark>Já está resolvido também.</mark></h2>
+            <p>Você também recebe <strong>15 Jantares de 15 Minutos</strong>: ideias rápidas, práticas e diferentes do cardápio de almoço.</p>
+            <div class="bonus__badges">
+              <span><strong>15</strong> jantares</span>
+              <span><strong>15</strong> minutos</span>
+              <span><strong>1</strong> bônus incluso</span>
+            </div>
+            <ul class="mini-checks"><li>✓ Poucos ingredientes</li><li>✓ Preparo rápido</li><li>✓ Opções econômicas</li></ul>
+          </div>
+          <div class="bonus__visual">
+            <div class="bonus-cover"><img src="assets/product/capa-15-jantares.webp" alt="Capa do bônus 15 Jantares de 15 Minutos" width="900" height="1200" loading="lazy"></div>
+            <div class="bonus-food bonus-food--one"><img src="assets/food/omelette_salad.jpg" alt="Omelete com salada" width="600" height="400" loading="lazy"></div>
+            <div class="bonus-food bonus-food--two"><img src="assets/food/pasta_creamy.jpg" alt="Massa cremosa" width="600" height="400" loading="lazy"></div>
+            <div class="bonus-ribbon">GRÁTIS<br><small>NA OFERTA</small></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="transformation">
+        <div class="container">
+          <div class="section-heading section-heading--center">
+            <p class="eyebrow eyebrow--red">UMA DECISÃO A MENOS POR DIA</p>
+            <h2>Da improvisação para uma rotina com resposta</h2>
+          </div>
+          <div class="compare">
+            <article class="compare__side compare__side--before"><span>ANTES</span><h3>“O que eu faço para o almoço?”</h3><ul><li>× Mesmos pratos toda semana</li><li>× Compras sem direção</li><li>× Pesquisa na hora da fome</li><li>× Ingredientes esquecidos</li></ul></article>
+            <div class="compare__arrow" aria-hidden="true">→</div>
+            <article class="compare__side compare__side--after"><span>DEPOIS</span><h3>“É só abrir o dia de hoje.”</h3><ul><li>✓ Uma ideia diferente por dia</li><li>✓ Lista semanal objetiva</li><li>✓ Receita pronta para consultar</li><li>✓ Mais variedade na rotina</li></ul></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="offer" id="oferta" aria-labelledby="offer-title">
+        <div class="container offer__container">
+          <div class="offer__header">
+            <p class="eyebrow eyebrow--yellow">DESBLOQUEIE TUDO AGORA</p>
+            <h2 id="offer-title">Você já abriu 1.<br><mark>Agora faltam 29.</mark></h2>
+            <p>Leve o desafio completo e pare de começar o almoço pela dúvida.</p>
+          </div>
+          <div class="offer-card">
+            <div class="offer-card__products">
+              <div class="product-stack">
+                <img class="product-stack__main" src="assets/product/capa-30-almocos.webp" alt="30 Dias Sem Repetir o Almoço" width="900" height="1200" loading="lazy">
+                <img class="product-stack__bonus" src="assets/product/capa-15-jantares.webp" alt="15 Jantares de 15 Minutos" width="900" height="1200" loading="lazy">
+              </div>
+              <div class="offer-seal">45<br><small>REFEIÇÕES</small></div>
+            </div>
+            <div class="offer-card__details">
+              <h3>Desafio 30 Dias — Almoço Surpresa</h3>
+              <ul class="offer-list">
+                <li><span>✓</span><strong>30 almoços sem repetir</strong></li>
+                <li><span>✓</span><strong>5 listas de compras semanais</strong></li>
+                <li><span>✓</span><strong>Fotos, preparo, tempo e porções</strong></li>
+                <li><span>✓</span><strong>Bônus: 15 Jantares de 15 Minutos</strong></li>
+                <li><span>✓</span><strong>Acesso digital após a compra</strong></li>
+              </ul>
+              <div class="price-block" data-price-block hidden>
+                <small>OFERTA ESPECIAL</small>
+                <strong data-price>R$ 0,00</strong>
+                <span data-installments></span>
+              </div>
+              <button class="button button--yellow button--full button--big" type="button" data-checkout>Desbloquear os 30 almoços <span aria-hidden="true">→</span></button>
+              <div class="checkout-trust"><span>🔒 Compra segura</span><span>⚡ Acesso digital</span><span>✓ Pagamento Cakto</span></div>
+              <p class="offer-card__note">Você será direcionado ao ambiente seguro de pagamento da Cakto.</p>
+            </div>
+          </div>
+
+          <div class="guarantee" data-guarantee hidden>
+            <div class="guarantee__seal"><strong data-guarantee-days>7</strong><span>DIAS</span></div>
+            <div><h3>Você decide com tranquilidade</h3><p>Experimente o material. Se estiver dentro das condições da garantia e não fizer sentido para você, solicite o reembolso pelo suporte.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq" id="faq">
+        <div class="container faq__layout">
+          <div class="faq__heading"><p class="eyebrow eyebrow--red">DÚVIDAS FREQUENTES</p><h2>Antes de abrir os outros 29...</h2><p>Aqui estão as respostas mais importantes sobre o desafio.</p></div>
+          <div class="faq__list">
+            <details><summary>O que eu recebo exatamente?<span>+</span></summary><p>Você recebe o guia digital 30 Dias Sem Repetir o Almoço, com 30 refeições, organização semanal e listas de compras, além do bônus 15 Jantares de 15 Minutos.</p></details>
+            <details><summary>É aplicativo ou ebook?<span>+</span></summary><p>É uma experiência digital organizada como desafio. A landing torna a descoberta interativa, e o conteúdo completo é entregue em formato digital para consulta no celular, tablet ou computador.</p></details>
+            <details><summary>As receitas usam ingredientes simples?<span>+</span></summary><p>Sim. O cardápio foi pensado com ingredientes conhecidos, substituições possíveis e opções econômicas para a rotina.</p></details>
+            <details><summary>Serve para quantas pessoas?<span>+</span></summary><p>As orientações do guia trazem referências para 2 pessoas e adaptação para 4 pessoas.</p></details>
+            <details><summary>O bônus está incluso?<span>+</span></summary><p>Sim. Os 15 Jantares de 15 Minutos fazem parte desta oferta, sem cobrança separada.</p></details>
+            <details><summary>Como recebo depois da compra?<span>+</span></summary><p>Após a confirmação do pagamento, você recebe as instruções de acesso digital pelos dados informados no checkout.</p></details>
+            <details data-faq-guarantee hidden><summary>Como funciona a garantia?<span>+</span></summary><p>O prazo e as condições aparecem no bloco da oferta e no checkout. A solicitação deve ser feita dentro desse período pelo canal de suporte informado.</p></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="final-cta">
+        <div class="container final-cta__content">
+          <p class="eyebrow eyebrow--yellow">O ALMOÇO DE AMANHÃ JÁ PODE ESTAR DECIDIDO</p>
+          <h2>30 dias. 30 ideias.<br><mark>Zero repetição.</mark></h2>
+          <p>Abra o calendário completo e comece o desafio.</p>
+          <button class="button button--yellow button--big" type="button" data-checkout>Quero desbloquear agora <span aria-hidden="true">→</span></button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__grid">
+        <div><strong class="footer__brand">30 DIAS<br><span>SEM REPETIR</span></strong><p>Um desafio digital para deixar a rotina do almoço mais simples e variada.</p></div>
+        <div><strong>Atendimento</strong><a data-support-link href="#faq"><span data-support-text>Consulte as dúvidas frequentes</span></a></div>
+        <div><strong>Informações</strong><a href="#faq">Dúvidas frequentes</a><a href="#oferta">O que está incluso</a></div>
+      </div>
+      <div class="container footer__bottom"><span>Produto digital. Imagens ilustrativas das refeições.</span><span data-producer></span></div>
+    </footer>
+
+    <div class="mobile-cta" id="mobile-cta">
+      <span id="mobile-cta-label">1 escolha grátis</span>
+      <a class="button button--yellow" id="mobile-cta-action" href="#desafio">Escolher caixinha</a>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
